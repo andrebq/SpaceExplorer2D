@@ -2,4 +2,4 @@
 
 Sub-folders will be ignored since most likely they contain compiled binary data.
 
-Use the parent folder to add platform specific details
+Add files in this folder to add platform specific details and reference them here
