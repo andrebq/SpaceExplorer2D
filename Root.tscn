@@ -53,9 +53,8 @@ texture = ExtResource( 10 )
 script = ExtResource( 11 )
 
 [node name="PlayableSpacecraft" parent="PlayerOne" instance=ExtResource( 1 )]
-starting_point = NodePath("../../Camera2D")
-look_to = NodePath("../TargetPosition")
 debug = true
+velocity = Vector2( 1, -1 )
 
 [node name="LocalCoordinates" type="Node2D" parent="PlayerOne/PlayableSpacecraft"]
 visible = false
@@ -66,8 +65,7 @@ gizmo_size = 150.0
 
 [node name="ObjectTracker2D" type="Node2D" parent="."]
 script = ExtResource( 6 )
-tracker = NodePath("../meteorFull")
-target = NodePath("../meteorFull2")
+tracker = NodePath("../Camera2D")
+target = NodePath("../PlayerOne/PlayableSpacecraft")
 active = true
-debug = true
-position_step = 0.3
+position_step = 0.99

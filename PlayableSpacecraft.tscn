@@ -10,7 +10,7 @@ height = 76.1995
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 59.6537, 14.2855 )
 
-[node name="PlayableSpacecraft" type="Area2D"]
+[node name="PlayableSpacecraft" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="spacecraft" type="Sprite" parent="."]

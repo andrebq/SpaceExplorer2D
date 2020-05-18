@@ -14,10 +14,12 @@ export(float, 0.01, 1, 0.01) var position_step:float = 0.9
 func set_tracker(value):
 	tracker = value
 	update()
+	update_nodes()
 
 func set_target(value):
 	target = value
 	update()
+	update_nodes()
 
 var tracker_node:Node2D
 var target_node:Node2D
@@ -30,7 +32,7 @@ func set_active(value):
 	set_physics_process(active)
 
 func update_nodes():
-	if active and is_inside_tree():
+	if active and is_inside_tree() and tracker and target:
 		tracker_node = get_node(tracker)
 		target_node = get_node(target)
 
@@ -55,7 +57,7 @@ func _process(delta):
 		tracker_node.global_position = lerp(tracker_node.global_position, target_node.global_position, position_step * delta)
 
 func _draw():
-	if is_tracking():
+	if is_tracking() and (debug or Engine.is_editor_hint()):
 		var local_t = get_global_transform()
 
 		draw_line(local_t.xform_inv(tracker_node.global_position), local_t.xform_inv(target_node.global_position), Color.aliceblue, 2)
