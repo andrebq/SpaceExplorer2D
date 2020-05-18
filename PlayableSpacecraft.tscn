@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Art/Topdown/spaceCraft1.png" type="Texture" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://PlayableSpacecraft.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 17.7535
@@ -10,7 +10,7 @@ height = 76.1995
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 59.6537, 14.2855 )
 
-[node name="Player" type="Area2D"]
+[node name="PlayableSpacecraft" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="spacecraft" type="Sprite" parent="."]
