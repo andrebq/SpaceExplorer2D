@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "ObjectTracker2D",
 "language": "GDScript",
 "path": "res://Modules/ObjectTracker2D.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayableSpacecraft",
+"language": "GDScript",
+"path": "res://PlayableSpacecraft.gd"
 } ]
 _global_script_class_icons={
-"ObjectTracker2D": ""
+"ObjectTracker2D": "",
+"PlayableSpacecraft": ""
 }
 
 [application]

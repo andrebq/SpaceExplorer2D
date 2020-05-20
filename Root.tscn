@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://PlayableSpacecraft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MouseClick.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Art/Topdown/meteorFullRound.png" type="Texture" id=9]
 [ext_resource path="res://Art/Background/Space001.png" type="Texture" id=10]
 [ext_resource path="res://PlayerOne.gd" type="Script" id=11]
+[ext_resource path="res://HumanPilot.gd" type="Script" id=12]
 
 [node name="Root" type="Node2D"]
 
@@ -54,7 +55,6 @@ script = ExtResource( 11 )
 
 [node name="PlayableSpacecraft" parent="PlayerOne" instance=ExtResource( 1 )]
 debug = true
-velocity = Vector2( 1, -1 )
 
 [node name="LocalCoordinates" type="Node2D" parent="PlayerOne/PlayableSpacecraft"]
 visible = false
@@ -62,6 +62,12 @@ script = ExtResource( 5 )
 gizmo_size = 150.0
 
 [node name="TargetPosition" type="Position2D" parent="PlayerOne"]
+
+[node name="HumanPilot" type="Node" parent="PlayerOne"]
+script = ExtResource( 12 )
+spacecraft = NodePath("../PlayableSpacecraft")
+linear_speed = 390.0
+angular_speed = 205.0
 
 [node name="ObjectTracker2D" type="Node2D" parent="."]
 script = ExtResource( 6 )
