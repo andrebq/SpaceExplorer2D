@@ -12,7 +12,7 @@ func _ready():
 	rotation = PI/2
 
 func _physics_process(delta):
-	print("as: ", angular_speed, " ", rotation)
+
 	rotation += angular_speed * delta
 	var _collision = move_and_collide(velocity.rotated(rotation) * delta, true)
 

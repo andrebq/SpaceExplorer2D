@@ -47,14 +47,15 @@ func _process(delta):
 	
 	if use_global_position:
 		var distance = (tracker_node.global_position - target_node.global_position)
-		if distance.length_squared() <= 0.01:
+		if distance.length_squared() <= 0.1:
+			tracker_node.global_position = target_node.global_position
 			return
 		
 		if rotate_tracker:
 			var heading = distance.normalized()
 			tracker_node.rotation = lerp_angle(tracker_node.rotation, heading.angle() - PI/2, rotation_step)
 		
-		tracker_node.global_position = lerp(tracker_node.global_position, target_node.global_position, position_step * delta)
+		tracker_node.global_position = lerp(tracker_node.global_position, target_node.global_position, position_step)
 
 func _draw():
 	if is_tracking() and (debug or Engine.is_editor_hint()):
